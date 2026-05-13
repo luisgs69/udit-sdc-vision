@@ -8,7 +8,9 @@ def train_rfdetr():
 
     script_dir  = Path(__file__).parent
     dataset_dir = script_dir.parent / "dataset_coco"
-    output_dir  = "/ultralytics/runs/detect/vision_proyect/finetuning_rfdetr_base"
+    # Dentro de Docker el volumen está en /ultralytics/runs; fuera, relativo al repo
+    default_out = "/ultralytics/runs/detect/vision_proyect/finetuning_rfdetr_base"
+    output_dir  = os.environ.get("OUTPUT_DIR", default_out)
 
     print(f"Iniciando Fine-Tuning RF-DETR-base (DINOv2 backbone): {dataset_dir}")
 
