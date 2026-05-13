@@ -1,0 +1,37 @@
+# Dataset — imágenes y anotaciones pesadas
+dataset_yolo/images/
+dataset_yolo/labels/
+dataset_yolo/labels_backup/
+dataset_coco/
+train/data/
+train/labels.json
+
+# Pesos y checkpoints
+runs/
+*.pt
+*.pth
+*.ckpt
+*.weights
+
+# MLflow
+mlruns/
+
+# Entorno virtual
+entorno/
+.venv/
+__pycache__/
+*.pyc
+
+# Outputs LaTeX y PDFs
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+
+# Auditoría de labels (generado por check_labels.py)
+label_check/
+
+# Miscelánea
+*.tar.gz
+.DS_Store

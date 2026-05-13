@@ -1,0 +1,11 @@
+path: dataset_yolo
+train: images/train
+val:   images/val
+names:
+  - bicycle
+  - bus
+  - car
+  - human
+  - motorcycle
+  - trafficcone
+  - truck
