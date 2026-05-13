@@ -53,12 +53,20 @@ def stratified_split_by_instances_iterstrat(
     return train_ids, val_ids
 
 def main():
-    coco_json = Path(r"C:\Users\Luis\Desktop\Master\Vision\trabajo\train\labels.json")
-    images_dir = Path(r"C:\Users\Luis\Desktop\Master\Vision\trabajo\train\data")
-    output_dir = Path(r"C:\Users\Luis\Desktop\Master\Vision\trabajo\dataset_yolo")
+    import argparse
+    parser = argparse.ArgumentParser(description="Convierte COCO a YOLO con split estratificado")
+    parser.add_argument("--coco_json",   default="train/labels.json",  help="Ruta al JSON COCO")
+    parser.add_argument("--images_dir",  default="train/data",         help="Carpeta con imágenes originales")
+    parser.add_argument("--output_dir",  default="dataset_yolo",       help="Carpeta de salida YOLO")
+    parser.add_argument("--val_size",    type=float, default=0.2,      help="Proporción validación (default 0.2)")
+    parser.add_argument("--seed",        type=int,   default=42,       help="Semilla aleatoria (default 42)")
+    args = parser.parse_args()
 
-    val_size = 0.2
-    seed = 42
+    coco_json  = Path(args.coco_json)
+    images_dir = Path(args.images_dir)
+    output_dir = Path(args.output_dir)
+    val_size   = args.val_size
+    seed       = args.seed
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
