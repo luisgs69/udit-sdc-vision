@@ -38,7 +38,7 @@ def find_empty_categories(coco: dict) -> set:
 
 def build_id_remap(categories: list, remove_ids: set) -> dict:
     """Returns {old_id: new_id} for kept categories, sorted by original id."""
-    kept = sorted(cat for cat in categories if cat["id"] not in remove_ids, key=lambda c: c["id"])
+    kept = sorted((cat for cat in categories if cat["id"] not in remove_ids), key=lambda c: c["id"])
     return {cat["id"]: new_id for new_id, cat in enumerate(kept)}
 
 
