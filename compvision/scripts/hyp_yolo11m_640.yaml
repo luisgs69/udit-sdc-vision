@@ -1,0 +1,46 @@
+# Hiperparámetros — YOLO11m finetuning (640 px, servidor remoto, GPU única)
+# Experimento: modelo mediano con resolución estándar YOLO.
+# batch=-1 → Ultralytics detecta automáticamente el batch óptimo para la VRAM disponible.
+
+# ── Modelo ────────────────────────────────────────────────────────────────────
+model: yolo11m.pt
+
+# ── Dataset ──────────────────────────────────────────────────────────────────
+imgsz: 640
+batch: -1         # autodetección de batch según VRAM del servidor
+workers: 4
+
+# ── Entrenamiento ─────────────────────────────────────────────────────────────
+epochs: 100
+patience: 10      # early stopping
+amp: true
+cos_lr: true
+
+# ── Optimizador SGD ───────────────────────────────────────────────────────────
+optimizer: SGD
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+# ── Augmentación — DESACTIVADA (experimento base) ─────────────────────────────
+hsv_h: 0.0
+hsv_s: 0.0
+hsv_v: 0.0
+degrees: 0.0
+translate: 0.0
+scale: 0.0
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.0
+mosaic: 0.0
+mixup: 0.0
+copy_paste: 0.0
+
+# ── MLflow / salida ───────────────────────────────────────────────────────────
+project: vision_proyect
+name: yolo11m_640_base
