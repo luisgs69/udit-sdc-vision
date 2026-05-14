@@ -44,7 +44,6 @@ def train(hyp_file: Path):
         **{k: v for k, v in hyp.items() if k not in ("project", "name")},
         project=hyp["project"],
         name=hyp["name"],
-        mlflow=True,
         verbose=True,
     )
 
