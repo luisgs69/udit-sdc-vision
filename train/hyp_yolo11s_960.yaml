@@ -8,7 +8,7 @@ workers: 4
 
 # ── Entrenamiento ─────────────────────────────────────────────────────────────
 epochs: 100
-patience: 20      # early stopping: para si no mejora 20 epochs seguidas
+patience: 10      # early stopping: para si no mejora 10 epochs seguidas
 amp: true         # mixed precision (FP16), obligatorio para caber en 10 GB
 cos_lr: true      # cosine LR scheduler
 
