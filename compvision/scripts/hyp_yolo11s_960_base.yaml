@@ -4,13 +4,13 @@
 
 # ── Dataset ──────────────────────────────────────────────────────────────────
 imgsz: 960
-batch: 16         # FP32 960px: ~5-6 GB en A2
+batch: 16         # FP16 960px: ~7-8 GB en A2
 workers: 4
 
 # ── Entrenamiento ─────────────────────────────────────────────────────────────
 epochs: 100
 patience: 10      # early stopping
-amp: false        # FP16 causa crash en validación en A2 con esta versión de Ultralytics
+amp: true         # FP16 — OK tras eliminar 6 bboxes degeneradas (w=0/h=0)
 cos_lr: true
 
 # ── Optimizador SGD ───────────────────────────────────────────────────────────
