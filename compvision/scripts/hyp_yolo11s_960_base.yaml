@@ -10,7 +10,7 @@ workers: 4
 # ── Entrenamiento ─────────────────────────────────────────────────────────────
 epochs: 100
 patience: 10      # early stopping
-amp: true
+amp: false        # FP16 causa crash en validación en A2 con esta versión de Ultralytics
 cos_lr: true
 
 # ── Optimizador SGD ───────────────────────────────────────────────────────────
