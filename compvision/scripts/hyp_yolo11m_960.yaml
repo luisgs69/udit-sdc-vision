@@ -1,12 +1,12 @@
-# Hiperparámetros — YOLO11m finetuning (640 px, servidor remoto, GPU única)
-# Experimento: modelo mediano con resolución estándar YOLO.
+# Hiperparámetros — YOLO11m finetuning (960 px, servidor remoto, GPU única)
+# Experimento: modelo mediano con resolución original del dataset (960×540).
 # batch=-1 → Ultralytics detecta automáticamente el batch óptimo para la VRAM disponible.
 
 # ── Modelo ────────────────────────────────────────────────────────────────────
 model: yolo11m.pt
 
 # ── Dataset ──────────────────────────────────────────────────────────────────
-imgsz: 640
+imgsz: 960
 batch: -1         # autodetección de batch según VRAM del servidor
 workers: 4
 

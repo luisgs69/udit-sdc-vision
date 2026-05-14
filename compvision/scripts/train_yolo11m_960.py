@@ -12,7 +12,7 @@ import yaml
 from ultralytics import YOLO
 
 SCRIPTS_DIR  = Path(__file__).parent
-HYP_FILE     = SCRIPTS_DIR / "hyp_yolo11m_640.yaml"
+HYP_FILE     = SCRIPTS_DIR / "hyp_yolo11m_960.yaml"
 DATASET_YAML = SCRIPTS_DIR.parent.parent / "dataset_yolo" / "dataset.yaml"
 DEVICE       = int(os.environ.get("GPU_DEVICE", 0))
 
